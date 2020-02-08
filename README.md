@@ -1,11 +1,13 @@
 # Scalar Values Tools
 
+[![Build Status](https://travis-ci.org/e-commit/scalar-values.svg?branch=master)](https://travis-ci.org/e-commit/scalar-values)
+
 ## Installation ##
 
 To install scalar-values with Composer just run :
 
 ```bash
-$ composer require ecommit/scalar-values
+$ composer require ecommit/scalar-values:1.*@dev
 ```
 
 ## Usage ##
