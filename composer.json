@@ -1,0 +1,34 @@
+{
+    "name": "ecommit/scalar-values",
+    "description": "Test scalar values.",
+    "keywords": ["scalar", "values"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hubert Lecorche",
+            "email": "contact@e-commit.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Ecommit\\ScalarValues\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Ecommit\\ScalarValues\\Tests\\": "tests/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "phpunit/phpunit": "^8.0"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
