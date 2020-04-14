@@ -7,7 +7,7 @@
 To install scalar-values with Composer just run :
 
 ```bash
-$ composer require ecommit/scalar-values:1.*@dev
+$ composer require ecommit/scalar-values
 ```
 
 ## Usage ##
