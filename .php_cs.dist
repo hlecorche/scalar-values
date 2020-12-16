@@ -13,17 +13,31 @@ $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__)
 ;
 
+$rules = [
+    '@PHP56Migration' =>  true,
+    '@PHP56Migration:risky' => true,
+    '@PHP71Migration' => true,
+    '@PHP71Migration:risky' => true,
+];
+
+if (\PHP_VERSION_ID >= 70300) {
+    $rules = array_merge($rules, [
+        '@PHP73Migration' => true,
+    ]);
+}
+if (\PHP_VERSION_ID >= 70400) {
+    $rules = array_merge($rules, [
+        '@PHP74Migration' => true,
+        '@PHP74Migration:risky' => true,
+    ]);
+}
+
 return PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
     ->setRules([
         '@Symfony' => true,
         '@Symfony:risky' => true,
         '@DoctrineAnnotation' => true,
-        '@PHP56Migration' =>  true,
-        '@PHP56Migration:risky' => true,
-        '@PHP71Migration' => true,
-        '@PHP71Migration:risky' => true,
-        '@PHP73Migration' => true,
         'array_syntax' => ['syntax' => 'short'],
         'fopen_flags' => true,
         'header_comment' => ['header' => $fileHeaderComment, 'separate' => 'both'],
