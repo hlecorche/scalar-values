@@ -1,6 +1,6 @@
 # Scalar Values Tools
 
-[![Build Status](https://travis-ci.com/e-commit/scalar-values.svg?branch=master)](https://travis-ci.com/e-commit/scalar-values)
+![Tests](https://github.com/e-commit/scalar-values/workflows/Tests/badge.svg)
 
 ## Installation ##
 
