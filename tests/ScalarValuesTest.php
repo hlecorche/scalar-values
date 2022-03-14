@@ -31,8 +31,8 @@ class ScalarValuesTest extends TestCase
 
     public function getTestContainsOnlyScalarValuesProdiver(): array
     {
-        //Colonne 1: Input
-        //Colonne 2: Expected result
+        // Colonne 1: Input
+        // Colonne 2: Expected result
 
         return [
             [[], true],
@@ -81,8 +81,8 @@ class ScalarValuesTest extends TestCase
 
     public function getTestFilterScalarValuesProdiver(): array
     {
-        //Colonne 1: Input
-        //Colonne 2: Expected result
+        // Colonne 1: Input
+        // Colonne 2: Expected result
 
         return [
             [[], []],

@@ -18,7 +18,7 @@ class ScalarValues
     public static function containsOnlyScalarValues(array $array): bool
     {
         foreach ($array as $child) {
-            if (!is_scalar($child)) {
+            if (!\is_scalar($child)) {
                 return false;
             }
         }
@@ -29,7 +29,7 @@ class ScalarValues
     public static function filterScalarValues(array $array): array
     {
         return array_filter($array, function ($child) {
-            return is_scalar($child);
+            return \is_scalar($child);
         });
     }
 }
