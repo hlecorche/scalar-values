@@ -15,6 +15,9 @@ namespace Ecommit\ScalarValues;
 
 class ScalarValues
 {
+    /**
+     * @param array<mixed> $array
+     */
     public static function containsOnlyScalarValues(array $array): bool
     {
         foreach ($array as $child) {
@@ -26,6 +29,11 @@ class ScalarValues
         return true;
     }
 
+    /**
+     * @param array<mixed> $array
+     *
+     * @return array<scalar>
+     */
     public static function filterScalarValues(array $array): array
     {
         return array_filter($array, fn ($child) => \is_scalar($child));

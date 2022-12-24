@@ -21,7 +21,7 @@ class ScalarValuesTest extends TestCase
     /**
      * @dataProvider getTestContainsOnlyScalarValuesProdiver
      */
-    public function testContainsOnlyScalarValues($input, $expected): void
+    public function testContainsOnlyScalarValues(array $input, bool $expected): void
     {
         $this->assertEquals(
             $expected,
@@ -49,12 +49,14 @@ class ScalarValuesTest extends TestCase
     }
 
     /**
+     * @param mixed $input
+     *
      * @dataProvider getNotArrayInputProdiver
      */
     public function testContainsOnlyScalarValuesInputError($input): void
     {
         $this->expectException(\TypeError::class);
-        ScalarValues::containsOnlyScalarValues($input);
+        ScalarValues::containsOnlyScalarValues($input); // @phpstan-ignore-line
     }
 
     public function getNotArrayInputProdiver(): array
@@ -71,7 +73,7 @@ class ScalarValuesTest extends TestCase
     /**
      * @dataProvider getTestFilterScalarValuesProdiver
      */
-    public function testFilterScalarValues($input, $expected): void
+    public function testFilterScalarValues(array $input, array $expected): void
     {
         $this->assertEquals(
             $expected,
@@ -99,11 +101,13 @@ class ScalarValuesTest extends TestCase
     }
 
     /**
+     * @param mixed $input
+     *
      * @dataProvider getNotArrayInputProdiver
      */
     public function testFilterScalarValuesInputError($input): void
     {
         $this->expectException(\TypeError::class);
-        ScalarValues::filterScalarValues($input);
+        ScalarValues::filterScalarValues($input); // @phpstan-ignore-line
     }
 }
