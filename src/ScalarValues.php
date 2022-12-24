@@ -28,8 +28,6 @@ class ScalarValues
 
     public static function filterScalarValues(array $array): array
     {
-        return array_filter($array, function ($child) {
-            return \is_scalar($child);
-        });
+        return array_filter($array, fn ($child) => \is_scalar($child));
     }
 }
