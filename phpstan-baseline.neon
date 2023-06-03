@@ -3,3 +3,11 @@ parameters:
         -
             message: '#no value type specified in iterable type array#'
             path: tests/
+        - # PHP 8 is required
+            message: '#testContainsOnlyScalarValuesInputError\(\) has parameter \$input with no type specified#'
+            paths:
+                - tests/ScalarValuesTest.php
+        - # PHP 8 is required
+            message: '#testFilterScalarValuesInputError\(\) has parameter \$input with no type specified#'
+            paths:
+                - tests/ScalarValuesTest.php
