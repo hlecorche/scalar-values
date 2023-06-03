@@ -13,10 +13,9 @@ jobs:
             fail-fast: false
             matrix:
                 include:
-                    -   php-version: '7.4'
+                    -   php-version: '8.1'
                         composer-flags: '--prefer-stable --prefer-lowest'
                         description: 'with lowest'
-                    -   php-version: '8.0'
                     -   php-version: '8.1'
                     -   php-version: '8.2'
 
@@ -26,7 +25,7 @@ jobs:
                         coding-standards: true
 
                     #Static Analysis (min PHP version)
-                    -   php-version: '7.4'
+                    -   php-version: '8.1'
                         description: 'with Static Analysis'
                         static-analysis: true
 
