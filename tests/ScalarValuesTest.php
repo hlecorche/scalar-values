@@ -14,13 +14,12 @@ declare(strict_types=1);
 namespace Ecommit\ScalarValues\Tests;
 
 use Ecommit\ScalarValues\ScalarValues;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class ScalarValuesTest extends TestCase
 {
-    /**
-     * @dataProvider getTestContainsOnlyScalarValuesProdiver
-     */
+    #[DataProvider('getTestContainsOnlyScalarValuesProdiver')]
     public function testContainsOnlyScalarValues(array $input, bool $expected): void
     {
         $this->assertEquals(
@@ -29,7 +28,7 @@ class ScalarValuesTest extends TestCase
         );
     }
 
-    public function getTestContainsOnlyScalarValuesProdiver(): array
+    public static function getTestContainsOnlyScalarValuesProdiver(): array
     {
         // Colonne 1: Input
         // Colonne 2: Expected result
@@ -48,16 +47,14 @@ class ScalarValuesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider getNotArrayInputProdiver
-     */
+    #[DataProvider('getNotArrayInputProdiver')]
     public function testContainsOnlyScalarValuesInputError(mixed $input): void
     {
         $this->expectException(\TypeError::class);
         ScalarValues::containsOnlyScalarValues($input);  // @phpstan-ignore-line
     }
 
-    public function getNotArrayInputProdiver(): array
+    public static function getNotArrayInputProdiver(): array
     {
         return [
             [null],
@@ -68,9 +65,7 @@ class ScalarValuesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider getTestFilterScalarValuesProdiver
-     */
+    #[DataProvider('getTestFilterScalarValuesProdiver')]
     public function testFilterScalarValues(array $input, array $expected): void
     {
         $this->assertEquals(
@@ -79,7 +74,7 @@ class ScalarValuesTest extends TestCase
         );
     }
 
-    public function getTestFilterScalarValuesProdiver(): array
+    public static function getTestFilterScalarValuesProdiver(): array
     {
         // Colonne 1: Input
         // Colonne 2: Expected result
@@ -98,9 +93,7 @@ class ScalarValuesTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider getNotArrayInputProdiver
-     */
+    #[DataProvider('getNotArrayInputProdiver')]
     public function testFilterScalarValuesInputError(mixed $input): void
     {
         $this->expectException(\TypeError::class);
