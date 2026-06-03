@@ -19,6 +19,9 @@ use PHPUnit\Framework\TestCase;
 
 class ScalarValuesTest extends TestCase
 {
+    /**
+     * @param mixed[] $input
+     */
     #[DataProvider('getTestContainsOnlyScalarValuesProdiver')]
     public function testContainsOnlyScalarValues(array $input, bool $expected): void
     {
@@ -28,6 +31,9 @@ class ScalarValuesTest extends TestCase
         );
     }
 
+    /**
+     * @return array<array{mixed[], bool}>
+     */
     public static function getTestContainsOnlyScalarValuesProdiver(): array
     {
         // Colonne 1: Input
@@ -54,6 +60,9 @@ class ScalarValuesTest extends TestCase
         ScalarValues::containsOnlyScalarValues($input);  // @phpstan-ignore-line
     }
 
+    /**
+     * @return array<array<mixed>>
+     */
     public static function getNotArrayInputProdiver(): array
     {
         return [
@@ -65,6 +74,10 @@ class ScalarValuesTest extends TestCase
         ];
     }
 
+    /**
+     * @param mixed[]  $input
+     * @param scalar[] $expected
+     */
     #[DataProvider('getTestFilterScalarValuesProdiver')]
     public function testFilterScalarValues(array $input, array $expected): void
     {
@@ -74,6 +87,9 @@ class ScalarValuesTest extends TestCase
         );
     }
 
+    /**
+     * @return array<array{mixed[], scalar[]}>
+     */
     public static function getTestFilterScalarValuesProdiver(): array
     {
         // Colonne 1: Input
